@@ -1,0 +1,59 @@
+﻿@model List<ABCApplication.Models.CartItem>
+@{
+    ViewBag.Title = "Add Order";
+    Layout = "~/Views/Shared/_Layouts.cshtml";
+}
+@section header{
+    Cart
+}
+
+@if (Model.Count > 0)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <td>ProductID</td>
+                <td>Product Name</td>
+                <td>Quantity</td>
+                <td>Price</td>
+                <td>Total</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Product.ID</td>
+                    <td>@item.Product.Name</td>
+                    <td>@item.Quantity</td>
+                    <td>@item.Product.Price</td>
+                    <td>@(item.Product.Price * item.Quantity)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+<div class="section group">
+    <div class="col-md-6">
+        @using (Html.BeginForm("AddOrder", "Cart", FormMethod.Post))
+        {
+            <div class="form-group">
+                <label>Customer Name</label>
+                <input name="cusName" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Customer Phone</label>
+                <input name="cusPhone" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Customer Email</label>
+                <input name="cusEmail" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Customer Address</label>
+                <input name="cusAddress" class="form-control" />
+            </div>
+            <button type="submit" class="btn btn-primary">Add Order</button>
+        }
+    </div>
+</div>

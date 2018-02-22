@@ -1,0 +1,109 @@
+﻿@model IEnumerable<Model.EF.Product>
+@using Model.EF;
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layouts.cshtml";
+}
+@section header{
+    List of products
+}
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@using (Html.BeginForm("Index", "Product", FormMethod.Get))
+{
+    <table class="table">
+        <tr>
+            <th>
+                <label for="keyword">Search by name</label>
+            </th>
+            <th>
+                <input type="keyword" class="form-control" id="keyword" name="keyword" />
+            </th>
+            <th>
+                <label for="category">Category</label>
+            </th>
+            <th>
+                @{
+                    List<SelectListItem> listItems = new List<SelectListItem>();
+                    var db = new ABCApplicationDbContext();
+                    var categories = db.Categories.ToList();
+                    foreach (var item in categories)
+                    {
+                        listItems.Add(new SelectListItem
+                        {
+                            Text = item.CatName,
+                            Value = item.ID.ToString(),
+                        });
+                    }
+                }
+                @Html.DropDownList("category", listItems, "All", new { @class = "form-control" })
+            </th>
+            <th>
+                <label for="from"> Price From</label>
+            </th>
+            <th>
+                <input type="number" class="form-control" style="width: 100px;" id="from" name="from" />
+            </th>
+            <th>
+                <label for="to"> To </label>
+            </th>
+            <th>
+                <input type="number" class="form-control" style="width: 100px;" id="to" name="to" />
+            </th>
+            <th>
+                <button type="submit" class="btn btn-info">Search</button>
+            </th>
+        </tr>
+    </table>
+                    }
+<table class="table">
+    <tr>
+        <th>
+            Product ID
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Make)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Category.CatName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>Action</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Make)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category.CatName)
+            </td>
+            <td>
+                $@Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </td>
+            <td><a href="/add-to-cart?productId=@item.ID&quantity=1">Add to Cart</a></td>
+        </tr>
+    }
+
+</table>

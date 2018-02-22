@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Model.EF.Order>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layouts.cshtml";
+}
+@section header{
+    List of Orders
+}
+
+<table class="table">
+    <tr>
+        <th>
+            OrderID
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CusName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CusPhone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CusEmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CusAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OrderDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CusName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CusPhone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CusEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CusAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrderDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

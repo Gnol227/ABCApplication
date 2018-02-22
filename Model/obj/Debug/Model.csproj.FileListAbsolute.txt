@@ -1,0 +1,14 @@
+D:\F2G\C# .NET Programming\Projects\ABCApplication\ABCApplication\Model\bin\Debug\Model.dll.config
+D:\F2G\C# .NET Programming\Projects\ABCApplication\ABCApplication\Model\bin\Debug\Model.dll
+D:\F2G\C# .NET Programming\Projects\ABCApplication\ABCApplication\Model\bin\Debug\Model.pdb
+D:\F2G\C# .NET Programming\Projects\ABCApplication\ABCApplication\Model\bin\Debug\EntityFramework.dll
+D:\F2G\C# .NET Programming\Projects\ABCApplication\ABCApplication\Model\bin\Debug\EntityFramework.SqlServer.dll
+D:\F2G\C# .NET Programming\Projects\ABCApplication\ABCApplication\Model\bin\Debug\PagedList.dll
+D:\F2G\C# .NET Programming\Projects\ABCApplication\ABCApplication\Model\bin\Debug\PagedList.Mvc.dll
+D:\F2G\C# .NET Programming\Projects\ABCApplication\ABCApplication\Model\bin\Debug\EntityFramework.xml
+D:\F2G\C# .NET Programming\Projects\ABCApplication\ABCApplication\Model\bin\Debug\EntityFramework.SqlServer.xml
+D:\F2G\C# .NET Programming\Projects\ABCApplication\ABCApplication\Model\bin\Debug\PagedList.xml
+D:\F2G\C# .NET Programming\Projects\ABCApplication\ABCApplication\Model\bin\Debug\PagedList.Mvc.xml
+D:\F2G\C# .NET Programming\Projects\ABCApplication\ABCApplication\Model\obj\Debug\Model.dll
+D:\F2G\C# .NET Programming\Projects\ABCApplication\ABCApplication\Model\obj\Debug\Model.pdb
+D:\F2G\C# .NET Programming\Projects\ABCApplication\ABCApplication\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
